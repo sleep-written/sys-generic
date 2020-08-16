@@ -4,7 +4,8 @@
   "description": "base for webservice",
   "main": "dist/index.js",
   "scripts": {
-    "test": "rmdir \\\"./dist\\\" /s /q && tsc && cls && mocha ./dist/**/*.test.js"
+    "test": "rmdir \"./dist\" /s /q && npx tsc && npx mocha \"./dist/**/*.test.js\"",
+    "start": "node ./dist"
   },
   "author": "sleep-written",
   "license": "MIT",
