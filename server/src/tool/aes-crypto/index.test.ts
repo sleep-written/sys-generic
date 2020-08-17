@@ -1,7 +1,7 @@
 import { AesCrypto } from '.';
 import { assert } from 'chai';
 
-describe.only('Testing "./tool/aes-crypto"', () => {
+describe('Testing "./tool/aes-crypto"', () => {
   describe('Test key generation/usage', () => {
     it('En/Decrypt in "aes-128-gcm"', async () => {
       const aes = new AesCrypto('./keys.aes');
