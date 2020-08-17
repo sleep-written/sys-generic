@@ -17,5 +17,6 @@
     "mocha": "^8.1.1",
     "nodemon": "^2.0.4",
     "typescript": "^3.9.7"
-  }
+  },
+  "dependencies": {}
 }
