@@ -15,6 +15,7 @@ export abstract class Base {
      */
     public get name() : string {
         const part = this._path
+            // .replace(/[\\\/]+$/gi, '')
             .split('/')
             .pop();
 
@@ -52,10 +53,16 @@ export abstract class Base {
             path = '.';
         }
 
+        // Absolute or relative path
         if (path.match(/(^\.{1,2}$|^\.{1,2}(\\|\/))/gi)) {
             path = join (process.cwd(), path);
         } else {
             path = join (path);
+        }
+
+        // Fix last dot
+        if (path.match(/(^[^\\\/]+|[\\\/])\.+$/gi)) {
+            path = path.replace(/\.+$/gi, '');
         }
 
         // Normalize

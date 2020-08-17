@@ -1,7 +1,7 @@
 import { Folder } from './folder';
 import { Base } from './base';
 import { join } from 'path';
-import * as asyncFs from './async-fs';
+import * as AsyncFs from './async-fs';
 
 export class File extends Base {
     public get parent() {
@@ -27,7 +27,7 @@ export class File extends Base {
     public async copy(path: string) {
         const cons = Object.getPrototypeOf(this).constructor;
         const dest = new cons(path);
-        await asyncFs.copy(this._path, dest.path);
+        await AsyncFs.copy(this._path, dest.path);
         return dest as this;
     }
 
@@ -39,8 +39,8 @@ export class File extends Base {
      */
     public async move(path: string) {
         const dest = new File(path);
-        await asyncFs.copy(this.path, dest.path);
-        await asyncFs.unlink(this._path);
+        await AsyncFs.copy(this.path, dest.path);
+        await AsyncFs.unlink(this._path);
         this._path = dest.path;
     }
 }

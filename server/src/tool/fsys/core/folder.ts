@@ -11,7 +11,7 @@ export class Folder extends Base {
     public get children(): Promise<int.Child[]> {
         return new Promise<int.Child[]>(async (resolve, reject) => {
             try {
-                const resp = await asyncFs.readdir((this._path.length > 0) ? this._path : '/');
+                const resp = await asyncFs.readdir(`${this._path}/`);
                 const data: int.Child[] = [];
 
                 for (const item of resp) {
