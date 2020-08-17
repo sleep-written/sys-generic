@@ -18,5 +18,7 @@
     "nodemon": "^2.0.4",
     "typescript": "^3.9.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
