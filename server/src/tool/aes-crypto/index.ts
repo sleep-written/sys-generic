@@ -22,10 +22,10 @@ export class AesCrypto {
   }
 
   /**
-   * Create a new Aes file with a random generate keys.
+   * Creates new AES random keys, and storages it in memory.
    * @param type Cipher algorithm to you want ot use.
    */
-  public makeFile(type: CipherGCMTypes | CipherCCMTypes) {
+  public randomKeys(type: CipherGCMTypes | CipherCCMTypes) {
     let length = 32;
     try {
       if (type.match(/^aes/gi)) {
@@ -43,13 +43,23 @@ export class AesCrypto {
       authLength: 16,
       type
     };
+  }
+
+  /**
+   * Save the AES generated keys into a file.
+   */
+  public save() {
+    if (!this._data) {
+      throw new DataEmptyError();
+    }
+
     return this._file.write(this._data);
   }
 
   /**
    * Load the AES Keys from the file given at the constructor.
    */
-  public async loadKeys() {
+  public async load() {
     this._data = await this._file.read();
   }
 
