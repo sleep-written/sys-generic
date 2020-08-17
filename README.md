@@ -3,7 +3,12 @@
 It's a template for webservers and command line tools...
 
 ## Deploy
-First, download all dependencies:
+First, go to the `server` folder:
+```bash
+$ cd server
+```
+
+Download all dependencies:
 ```bash
 $ npm i
 ```
