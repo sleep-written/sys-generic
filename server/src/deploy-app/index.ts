@@ -6,8 +6,11 @@ import { Interface } from '../tool/server';
 import { bindHelper } from './bind-helper';
 import { loadConfig } from './load-config';
 import { mountEndpoints } from './mount-endpoints';
+import { listen } from './listen';
+
 export const deployment: Interface.Action[] = [
     loadConfig,
     bindHelper,
-    mountEndpoints
+    mountEndpoints,
+    listen
 ];

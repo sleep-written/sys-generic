@@ -6,7 +6,7 @@ export { OrmConfigData }
 export class OrmConfig extends Core<OrmConfigData[]> {
     public constructor(path?: string) {
         if (!path) {
-            path = './appconfig.json';
+            path = './ormconfig.json';
         }
 
         super(path, ormConfigInit);
