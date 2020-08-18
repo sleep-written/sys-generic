@@ -4,3 +4,4 @@ dist/*
 
 # Configuration files
 *config.json
+!tsconfig.json
