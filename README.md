@@ -1,6 +1,6 @@
 # SYS-GENERIC
 
-It's a template for webservices and command line tools...
+It's a template for webservices and command line tools. It's written in typescript for node 12.16.3 (LTS).
 
 ## Deploy
 First, go to the `server` folder and transpille all:
