@@ -3,9 +3,10 @@
 It's a template for webservices and command line tools...
 
 ## Deploy
-First, go to the `server` folder:
+First, go to the `server` folder and transpille all:
 ```bash
 $ cd server
+$ npx tsc
 ```
 
 Download all dependencies and transpile:
